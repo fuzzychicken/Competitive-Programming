@@ -1,21 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
+using ll = long long;
 
 int main() {
-    cin.tie(0)->sync_with_stdio(0);
+    ios_base::sync_with_stdio(false), cin.tie(nullptr);
     int c;
     cin >> c;
     while (c--) {
-        long long ans = 1e18;
-        long long x;
+        ll ans = 1e18;
+        ll x;
         cin >> x;
-        for (long long i = 0; i <= ceil(sqrt(x)); i++) {
-            long long pp, pp2;
-            long long q = x-(i*i);
+        for (ll i = 0; i <= ceil(sqrt(x)); i++) {
+            ll pp, pp2;
+            ll q = x-(i*i);
             if (q < 0) q = 0;
             pp = ceil(sqrt(q));
             pp2 = floor(sqrt(q));
-            // for (long long j = 0; j <= (pp); j++) {
+            // for (ll j = 0; j <= (pp); j++) {
             //     if (i*i + j*j == x) {
             //         ans = min(ans, i+j);
             //     }
@@ -28,6 +29,6 @@ int main() {
             }
         }
         if (ans == 1e18) ans = -1;
-        cout  << ans << '\n';
+        cout << ans << '\n';
     }
 }

@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    cin.tie(0)->sync_with_stdio(0);
+    ios_base::sync_with_stdio(false), cin.tie(nullptr);
     /* freopen("template.in","r",stdin); */
     /* freopen("template.out","w",stdout); */
 

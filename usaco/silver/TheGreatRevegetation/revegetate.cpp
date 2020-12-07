@@ -5,9 +5,6 @@ using namespace std;
 struct Edge {
     int to;
     bool same;
-    Edge(int a, bool b):
-    to(a), same(b)
-    {}
 };
 
 const int MAXN = 1e5;
@@ -51,12 +48,12 @@ int main() {
         fin >> c >> a >> b;
         a--, b--;
         if (c == 'S') {
-            adj[a].push_back(Edge(b, true));
-            adj[b].push_back(Edge(a, true));
+            adj[a].push_back({b, true});
+            adj[b].push_back({a, true});
         }
         else {
-            adj[a].push_back(Edge(b, false));
-            adj[b].push_back(Edge(a, false));
+            adj[a].push_back({b, false});
+            adj[b].push_back({a, false});
         }
     }
     memset(visited, -1, sizeof(visited));

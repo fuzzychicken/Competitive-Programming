@@ -15,4 +15,5 @@ int main() {
         }
         cout << s[s.length()-1] << endl;
     }
+    return 0;
 }

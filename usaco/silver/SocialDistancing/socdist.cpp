@@ -19,7 +19,7 @@ bool check(int64_t a) {
 }
 
 int main() {
-	cin.tie(0)->sync_with_stdio(0);
+	ios_base::sync_with_stdio(false), cin.tie(nullptr);
 	freopen("socdist.in","r",stdin);
 	freopen("socdist.out","w",stdout);
 	cin >> n >> m;

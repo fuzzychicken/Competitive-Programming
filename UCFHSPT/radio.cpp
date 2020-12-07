@@ -26,7 +26,7 @@ double gogo(double second, vector<double> preset, int idxSecond, vector<double> 
 }
 
 int main() {
-    cin.tie(0)->sync_with_stdio(0);
+    ios_base::sync_with_stdio(false), cin.tie(nullptr);
     int c;
     cin >> c;
     for (int pp = 1; pp <= c; pp++) {

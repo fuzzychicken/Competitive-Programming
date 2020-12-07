@@ -1,17 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
+using ll = long long;
 
 int main() {
-    cin.tie(0)->sync_with_stdio(0);
+    ios_base::sync_with_stdio(false), cin.tie(nullptr);
     int c;
     cin >> c;
     while (c--) {
-        long long n, k;
+        ll n, k;
         cin >> n >> k;
-        long long soldiers[n];
+        ll soldiers[n];
         int diff[n+1];
         diff[0] = 0;
-        long long tot = 0;
+        ll tot = 0;
         for (int i = 0; i < n; i++) {
             cin >> soldiers[i];
             int adder;
@@ -24,10 +25,13 @@ int main() {
             tot += soldiers[i];
         }
         for (int i = 0; i < k; i++) {
-            long long b;
+            ll b;
             cin >> b;
-            if (diff[b] > 0) tot += diff[b];
+            if (diff[b] > 0) {
+                tot += diff[b];
+            } 
         }
         cout << tot << '\n';
     }
+    return 0;
 }

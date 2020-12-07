@@ -1,16 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
+using ll = long long;
 
 int main() {
-    cin.tie(0)->sync_with_stdio(0);
+    ios_base::sync_with_stdio(false), cin.tie(nullptr);
     int c;
     cin >> c;
     while (c--) {
         int t;
-        long long ans = 1;
+        ll ans = 1;
         cin >> t;
         for (int i = 0; i < t; i++) {
-            long long cnt = 0;
+            ll cnt = 0;
             for (int j = 0; j <= 9; j++) {
                 if (j % 3 == 0) cnt++;
             }
