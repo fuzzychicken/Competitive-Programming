@@ -5,7 +5,7 @@ int n, k;
 int a[50000];
 
 int main() {
-    ios_base::sync_with_stdio(0); cin.tie(0);
+    ios_base::sync_with_stdio(0), cin.tie(0);
     freopen("diamond.in","r",stdin);
     freopen("diamond.out","w",stdout);
     cin >> n >> k;
