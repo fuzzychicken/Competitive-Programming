@@ -71,12 +71,9 @@ int main() {
                 idxSkippedTo = findidx(x, frequency);
                 skipDist = min(skipDist,1+min(abs(idxSkippedTo-idxSecond),n-abs(idxSkippedTo-idxSecond)));
             }
-        
 
             int ans = min(skipDist, noSkipDist);
             cout << ans << '\n';
-            
-        }
-        cout << '\n';
+            return 0;
     }
 }
