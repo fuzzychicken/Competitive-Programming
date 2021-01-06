@@ -31,4 +31,5 @@ int main() {
         if (ans == 1e18) ans = -1;
         cout << ans << '\n';
     }
+    return 0;
 }

@@ -1,5 +1,4 @@
 #include <bits/stdc++.h> 
-
 using namespace std;
 
 const int MAXN = 1002;
@@ -29,5 +28,4 @@ int main() {
         }
     }
     fout << cnt << '\n';
-    return 0;
 }

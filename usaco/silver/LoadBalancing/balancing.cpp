@@ -1,50 +1,55 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
-const int MAXN = 1000;
-
-int n;
-int x[MAXN], y[MAXN];
-vector<pair<int, int>> coord;
-
 int main() {
-    ifstream fin ("balancing.in");
-    ofstream fout ("balancing.out");
-    fin >> n;
-    for (int i = 0; i < n; i++) {
-        fin >> x[i] >> y[i];
-        coord.push_back({x[i], y[i]});
-    }
-    sort(x, x + n);
-    sort(y, y + n);
+    cin.tie(0)->sync_with_stdio(0);
+    #ifndef LOCAL
+    freopen("balancing.in","r",stdin);
+    freopen("balancing.out","w",stdout);
+    #endif
 
-    int ans = 2e9;
-    for (int i = 0; i < n; i++) {
-        int vertical = x[i] + 1;
-        for (int j = 0; j < n; j++) {
-            int horizontal = y[i] + 1;
-            int m = 0;
-            int one = 0, two = 0, three = 0, four = 0;
-            for (auto& p : coord) {
-                int x = p.first, y = p.second;
-                if (x > vertical && y > horizontal) {
-                    one++;
+    int N;
+    cin >> N;
+
+    vector<pair<int, int>> coord(N);
+
+    for (int i = 0; i < N; i++) {
+        cin >> coord[i].first >> coord[i].second;
+    }
+
+    sort(coord.begin(), coord.end());
+
+    int ans = 1e9;
+    for (int i = 0; i < N; i++) {
+        int y = coord[i].second;
+        int x = coord[0].first;
+        int upRight = 0, upLeft = 0, downLeft = 0, downRight = 0;
+        for (int j = 0; j < N; j++) {
+            if (coord[j].second > y) {
+                if (coord[j].first > x) {
+                    upRight++;
+                } else {
+                    upLeft++;
                 }
-                else if (x < vertical && y > horizontal) {
-                    two++;
-                }
-                else if (x < vertical && y < horizontal) {
-                    three++;
-                }
-                else {
-                    four++;
+            } else {
+                if (coord[j].first > x) {
+                    downRight++;
+                } else {
+                    downLeft++;
                 }
             }
-            m = max(one, max(two, max(three, four)));
-            ans = min(m, ans);
+        }
+        ans = min(ans, max({upLeft, upRight, downLeft, downRight}));
+        for (int j = 1; j < N - 1; j++) {
+            if (coord[j].second > y) {
+                upRight--;
+                upLeft++;
+            } else {
+                downRight--;
+                downLeft++;
+            }
+            ans = min(ans, max({upLeft, upRight, downLeft, downRight}));
         }
     }
-    fout << ans << '\n';
-    return 0;
+    cout << ans << '\n';
 }

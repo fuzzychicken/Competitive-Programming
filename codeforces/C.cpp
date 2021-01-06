@@ -21,6 +21,10 @@ void solve() {
         }
     }
     cout << ans << '\n';
+    vector<int> hello(n);
+    for (auto &i : hello) {
+        cin >> i;
+    }
 }
  
 int main() {

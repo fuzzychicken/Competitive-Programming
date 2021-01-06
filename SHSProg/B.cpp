@@ -13,7 +13,9 @@ int main() {
 		sum += (n-i);
 	}
 	sum += 2;
-
+	for (int i = 0; i < n; i++) {
+		
+	}
 	cout << sum << '\n';
 	return 0;
 }

@@ -15,10 +15,10 @@ int numvowels(string s) {
 
 int main() {
     ios_base::sync_with_stdio(false), cin.tie(nullptr);
-    int c;
-    cin >> c;
+    int TC;
+    cin >> TC;
 
-    for (int T = 1; T <= c; T++)  {
+    for (int T = 1; T <= TC; T++)  {
         int s; cin >> s;
         vector<pair<string, int>> mp;
         for (int i = 0; i < s; i++) {

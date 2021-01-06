@@ -3,6 +3,7 @@
 #include <vector>
 #include <algorithm>
 #include <queue>
+#include <cstring>
 using namespace std;
 
 int n, m, p[100000];
@@ -17,9 +18,7 @@ bool works(int w) {
         adj[wormhole[i].second.second].push_back(wormhole[i].second.first);
     }
     int visited[100000];
-    for (int i = 0; i < n; i++) {
-        visited[i] = -1;
-    }
+    memset(visited, -1, sizeof(visited));
     int comp = 0;
     queue<int> q;
     for (int i = 0; i < n; i++) { 

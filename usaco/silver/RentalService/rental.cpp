@@ -2,13 +2,13 @@
 using namespace std;
 
 struct store {
-	long long q, p;
+	int64_t q, p;
 };
 
 int n, m, r;
-vector<long long> c, rentals;
+vector<int64_t> c, rentals;
 vector<store> stores;
-long long possible[100002][2];
+int64_t possible[100002][2];
 
 int main() {
 	ios_base::sync_with_stdio(0), cin.tie(0);
@@ -22,17 +22,17 @@ int main() {
 		cin >> stores[i].q >> stores[i].p;
 	for (int i = 0; i < r; i++) 
 		cin >> rentals[i];
-	sort(c.begin(), c.end(), [](long long a, long long b) {
+	sort(c.begin(), c.end(), [](int64_t a, int64_t b) {
 		return a > b;
 	});
 	sort(stores.begin(), stores.end(), [](store a, store b) {
 		return a.p > b.p;
 	});
-	sort(rentals.begin(), rentals.end(), [](long long a, long long b) {
+	sort(rentals.begin(), rentals.end(), [](int64_t a, int64_t b) {
 		return a > b;
 	});
 	int cowidx = 0, storeidx = 0;
-	long long ans = 0;
+	int64_t ans = 0;
 	while (storeidx < m && cowidx < n) {
 		if (c[cowidx] < stores[storeidx].q) {
 			possible[cowidx][0] += c[cowidx] * stores[storeidx].p;

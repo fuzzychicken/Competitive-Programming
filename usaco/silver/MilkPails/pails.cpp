@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
 // DEBUG
@@ -54,8 +53,7 @@ int main() {
             int temp = v.first + (x - v.first);
             int temp2 = v.second - (x - v.first);
             go(temp, temp2, previous);
-        }
-        else {
+        } else {
             int temp = v.first + v.second;
             int temp2 = 0;
             go(temp, temp2, previous);
@@ -66,8 +64,7 @@ int main() {
             int temp = v.second + (y - v.second);
             int temp2 = v.first - (y - v.second);
             go(temp2, temp, previous);
-        }
-        else {
+        } else {
             int temp = v.second + v.first;
             int temp2 = 0;
             go(temp2, temp, previous);

@@ -69,12 +69,10 @@ int main() {
         a--, b--;
         if (s[a] != s[b]) {
             fout << 1;
-        }
-        else {
+        } else {
             if (s[a] == type || visited[a] != visited[b]) {
                 fout << 1;
-            }
-            else {
+            } else {
                 fout << 0;
             }
         }
