@@ -13,10 +13,10 @@ int main() {
     for (int i = 1; i <= m; i++) {
         types.insert(i);
     }
-
+    
     int pref[n+1];
     pref[0] = 0;
-
+    
     vector<pair<int, int>> q(n);
     for (int i = 0; i < n; i++) {
         cin >> q[i].first >> q[i].second;
@@ -43,4 +43,3 @@ int main() {
     }
     return 0;
 }
-

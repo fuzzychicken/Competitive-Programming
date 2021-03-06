@@ -14,8 +14,7 @@ bool check(int mid) {
     for (int i = 1; i < n; i++) {
         if (arrival[i] - minElement <= mid && cnt < c) {
             cnt++;
-        }
-        else {
+        } else {
             bus++;
             minElement = arrival[i];
             cnt = 1;
@@ -39,8 +38,7 @@ int main() {
         int mid = (lo + hi) / 2;
         if (!check(mid)) {
             lo = mid + 1;
-        }
-        else {
+        } else {
             hi = mid - 1;
             ans = mid;
         }

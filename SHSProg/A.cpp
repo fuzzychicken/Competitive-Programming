@@ -8,9 +8,17 @@ long long fact(long long n) {
 }
 
 int main() {
-	cin.tie(0)->sync_with_stdio(0);
-	long long n;
-	cin >> n; 
-	cout << (fact(n) * fact(n)) / 6 << '\n';
-	return 0;
+    cin.tie(0)->sync_with_stdio(0);
+    //xcode c++ code
+    int n; cin >> n;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (i == j) continue;
+            for (int k = 0; k < n; k++) {
+                if (k == j == i) {
+                    cout << "pen\n";
+                }
+            }
+        }
+    }
 }
